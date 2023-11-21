@@ -23,6 +23,8 @@
                 <td>{{ vocabulo.significado }}</td>
                 <td>{{ vocabulo.versao }}</td>
             </tr>
+            <p v-if="vocabulos && vocabulos.length < 1">Nenhum vocábulo foi encontrado para os critérios
+fornecidos</p>
         </table>
     </div>
 </template>
@@ -54,12 +56,7 @@ async function cadastrar() {
 }
 
 async function filtrar() {
-  const results = (await axios.get(`vocabulo/${termo.value}/${versao.value}`)).data;
-  if (results.length == '') {
-    vocabulos.value = "Nenhum vocábulo foi encontrado para os critérios fornecidos";
-  } else {
-    vocabulos.value = results;
-  }
+  vocabulos.value = (await axios.get(`vocabulo/${termo.value}/${versao.value}`)).data;
 }
 
 onMounted(() => {
