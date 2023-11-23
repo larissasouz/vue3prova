@@ -9,12 +9,12 @@ import HelloWorld from './components/HelloWorld.vue'
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
-      <HelloWorld msg="Segundou!" />
+      <HelloWorld msg="Olá!" />
 
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
-        <RouterLink to="/Vocabulos">Gerencie Vocábulos</RouterLink>
+        <RouterLink to="/compromisso">Compromissos</RouterLink>
       </nav>
     </div>
   </header>
